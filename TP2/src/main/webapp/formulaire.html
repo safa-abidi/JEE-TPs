@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Formulaire</title>
+</head>
+<body>
+	<form method="get" action="ServletTraitement">
+		Nom : <input type="text" name="nom">
+		Prenom : <input type="text" name="prenom"><br>
+		
+		Homme: <INPUT type="radio" name="sexe" value="M">
+		Femme : <INPUT type="radio" name="sexe" value="F"><br>
+		
+	Fonction :<SELECT name="fonction">
+		<OPTION VALUE="etd" selected="selected">Etudiant</OPTION>
+		<OPTION VALUE="ing">Ingénieur</OPTION>
+		<OPTION VALUE="ens">Enseignant</OPTION>
+		<OPTION VALUE="ret">Retraité</OPTION>
+		<OPTION VALUE="autre">Autre</OPTION>
+	</SELECT><br>
+	Loisirs : <INPUT type="checkbox" name ="loisirs" value="lecture"> Lecture
+			  <INPUT type="checkbox" name ="loisirs" value="sport">Sport
+			  <INPUT type="checkbox" name ="loisirs" value="voyage">Voyage <br>
+			  
+		<INPUT type="submit" value="Envoyer">
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+

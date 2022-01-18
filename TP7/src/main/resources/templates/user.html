@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="default"
+>
+<head>
+  <title>Users List</title>
+
+  <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+</head>
+<body>
+<div class="container">
+  <div layout:fragment="content" class="row">
+    <div class="col-xs-8 col-md-8">
+      <h3>
+        <a href="/create" class="btn btn-info"
+        ><span class="glyphicon glyphicon-plus-sign"></span>Add User</a
+        >
+      </h3>
+      <h2>Users List</h2>
+      <div class="table-responsive">
+        <table class="table" id="user-table">
+          <thead>
+          <tr>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>User Ville</th>
+            <th>User Login</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="user : ${users}">
+            <td>
+              <a
+                      th:text="${user.name}"
+                      th:href="@{'/show/' + ${user.idUser}}"
+              ></a>
+            </td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.ville}"></td>
+            <td th:text="${user.login}"></td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"
+></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html
+        lang="en"
+        layout:decorate="default"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <title>Edit User</title>
+
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+</head>
+<body>
+<div class="container">
+
+    <div class="row" layout:fragment="content">
+        <div class="col-xs-8 col-md-8">
+            <h3>
+                <a class="btn btn-lg btn-primary" href="/user"
+                ><span class="glyphicon glyphicon-list"></span>Users</a
+                >
+            </h3>
+            <h2>Edit User</h2>
+            <form action="/update">
+                <div class="form-group">
+                    <label for="name">User Name:</label
+                    ><input
+                        class="form-control"
+                        name="name"
+                        th:value="${user.name}"
+                        type="text"
+                />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">User Email:</label
+                    ><input
+                        class="form-control"
+                        name="email"
+                        th:value="${user.email}"
+                        type="email"
+                />
+                </div>
+
+                <div class="form-group">
+                    <label for="ville">User Ville:</label
+                    ><input
+                        class="form-control"
+                        name="ville"
+                        th:value="${user.ville}"
+                        type="text"
+                />
+                </div>
+
+                <div class="form-group">
+                    <label for="login">User Login:</label
+                    ><input
+                        class="form-control"
+                        name="login"
+                        th:value="${user.login}"
+                        type="text"
+                />
+                </div>
+
+                <div class="form-group">
+                    <label for="pass">User password:</label
+                    ><input
+                        class="form-control"
+                        name="pass"
+                        th:value="${user.pass}"
+                        type="password"
+                />
+                </div>
+
+                <input name="idUser" th:value="${user.idUser}" type="hidden"/>
+                <button class="btn btn-success" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"
+></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
